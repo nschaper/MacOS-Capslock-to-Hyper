@@ -55,27 +55,24 @@
 
 It only takes two steps to enable Capslock on your Mac: Download & Enable
 
-1. [Download](https://github.com/pqrs-org/Karabiner-Elements/releases/download/v14.2.0/Karabiner-Elements-14.2.0.dmg)
+1. [Download](https://github.com/pqrs-org/Karabiner-Elements/releases)
 
    Download & Install [**Karabiner-Elements**](https://karabiner-elements.pqrs.org/).
 
    Following the wizard and grant required permissions (Settings - Security - Privacy)
 
-2. [Enable](karabiner://karabiner/assets/complex_modifications/import?url=https://ke-complex-modifications.pqrs.org/json/caps_lock_enhancement.json)
+2. [Enable Capslock-to-Hyper](karabiner://karabiner/assets/complex_modifications/import?url=https://ke-complex-modifications.pqrs.org/json/caps_lock_enhancement.json)
 
-   Open this [link](karabiner://karabiner/assets/complex_modifications/import?url=https://raw.githubusercontent.com/Vonng/Capslock/master/mac_v3/capslock.json) with Safari. It will launch Karabiner-Elements and load configuration.
+   Open this [link](karabiner://karabiner/assets/complex_modifications/import?url=https://raw.githubusercontent.com/nschaper/MacOS-Capslock-to-Hyper/master/mac_v3/capslock.json) with Safari. It will launch Karabiner-Elements and load configuration.
 
-   `karabiner://karabiner/assets/complex_modifications/import?url=https://raw.githubusercontent.com/Vonng/Capslock/master/mac_v3/capslock.json`
+   `karabiner://karabiner/assets/complex_modifications/import?url=https://raw.githubusercontent.com/nschaper/MacOS-Capslock-to-Hyper/master/mac_v3/capslock.json`
 
-   > #### Alternative Links
-   > * [Karabiner Gallery](karabiner://karabiner/assets/complex_modifications/import?url=https://ke-complex-modifications.pqrs.org/json/caps_lock_enhancement.json)：https://ke-complex-modifications.pqrs.org/json/caps_lock_enhancement.json
-   > * [GitHub Repo](karabiner://karabiner/assets/complex_modifications/import?url=https://raw.githubusercontent.com/Vonng/Capslock/master/mac_v3/capslock.json)： https://raw.githubusercontent.com/Vonng/Capslock/master/mac_v3/capslock.json
-   > * [Capslock Website](karabiner://karabiner/assets/complex_modifications/import?url=https://vonng.com/capslock.json)： https://vonng.com/capslock.json
-   > * Or download [**capslock.json**](mac_v3/capslock.json) to ` ~/.config/karabiner/assets/complex_modifications/` manually.
+   > #### Alternative Installation
+     > * Or download [**capslock.json**](mac_v3/capslock.json) to ` ~/.config/karabiner/assets/complex_modifications/` manually.
 
    Click `Enable All` for `Capslock Enhancement` on pop-up dialog. It will affect immediately.
 
-   You can now try moving cursor with ⇪ + h,j,k,l , And exploring more features below.
+   You can now try moving cursor with ⇪ + h,j,k,l , and explore more features below.
 
 
 
