@@ -1,16 +1,7 @@
-# CapsLock
+# MacOS-CapsLock-to-Hyper
+Transform CapsLock into a powerful **modifier** **<kbd>✱</kbd> Hyper** that allows you to radically enhance what you can do with your keyboard.  
 
-> *Make CapsLock Great Again!*
->
-> [中文文档](docs/zh-cn/) | [EN DOCS](http://capslock.vonng.com/) | [Karabiner Gallery](https://ke-complex-modifications.pqrs.org/#caps_lock_enhancement) | [Github Repo](https://github.com/Vonng/Capslock) | [Import URL](karabiner://karabiner/assets/complex_modifications/import?url=https://raw.githubusercontent.com/Vonng/Capslock/master/mac_v3/capslock.json)
->
-> [![Visits Badge](https://badges.pufler.dev/visits/Vonng/Capslock)](https://badges.pufler.dev)
-
-------------------------
-
-## CapsLock Enhancement Mac v3
-
-*Transform <kbd>⇪</kbd>CapsLock into a powerful **modifier** **<kbd>✱</kbd> Hyper** that miraculously increases your work productivity!*
+Note:  this repo is forked from https://github.com/vongg/Capslock
 
 ![control-plane-0](docs/img/keyboard.jpg)
 
