@@ -13,6 +13,41 @@
   "repo": "https://github.com/Vonng/Capslock",
   "rules": [
     {
+      "description": "Cmd-Tab to Alt-Tab when using RDP",
+      "manipulators": [
+        {
+          "description": "Cmd-Tab to Alt-Tab",
+          "type": "basic",
+          "from": {
+            "key_code": "tab",
+            "modifiers": {
+              "mandatory": [
+                "left_command"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "tab",
+              "modifiers": [
+                "left_alt"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^com\\.microsoft\\.rdc$",
+                "^com\\.microsoft\\.rdc\\.mac$",
+                "^com\\.microsoft\\.rdc\\.macos$"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
       "description": "CapsLock to Hyper",
       "manipulators": [
         {
