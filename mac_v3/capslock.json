@@ -13,7 +13,7 @@
   "repo": "https://github.com/Vonng/Capslock",
   "rules": [
     {
-      "description": "Cmd-Tab to Alt-Tab when using RDP",
+      "description": "Microsoft Remote Desktop (RDP) remapping",
       "manipulators": [
         {
           "description": "Cmd-Tab to Alt-Tab",
@@ -30,7 +30,127 @@
             {
               "key_code": "tab",
               "modifiers": [
-                "left_alt"
+                "left_option"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^com\\.microsoft\\.rdc$",
+                "^com\\.microsoft\\.rdc\\.mac$",
+                "^com\\.microsoft\\.rdc\\.macos$"
+              ]
+            }
+          ]
+        },
+        {
+          "description": "Cmd-w to Ctrl-w",
+          "type": "basic",
+          "from": {
+            "key_code": "w",
+            "modifiers": {
+              "mandatory": [
+                "left_command"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "w",
+              "modifiers": [
+                "left_control"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^com\\.microsoft\\.rdc$",
+                "^com\\.microsoft\\.rdc\\.mac$",
+                "^com\\.microsoft\\.rdc\\.macos$"
+              ]
+            }
+          ]
+        },
+        {
+          "description": "Cmd-q to Alt-F4",
+          "type": "basic",
+          "from": {
+            "key_code": "q",
+            "modifiers": {
+              "mandatory": [
+                "left_command"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "f4",
+              "modifiers": [
+                "left_option"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^com\\.microsoft\\.rdc$",
+                "^com\\.microsoft\\.rdc\\.mac$",
+                "^com\\.microsoft\\.rdc\\.macos$"
+              ]
+            }
+          ]
+        },
+        {
+          "description": "Cmd-n to Ctrl-n",
+          "type": "basic",
+          "from": {
+            "key_code": "n",
+            "modifiers": {
+              "mandatory": [
+                "left_command"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "n",
+              "modifiers": [
+                "left_control"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^com\\.microsoft\\.rdc$",
+                "^com\\.microsoft\\.rdc\\.mac$",
+                "^com\\.microsoft\\.rdc\\.macos$"
+              ]
+            }
+          ]
+        },
+        {
+          "description": "Cmd-t to Ctrl-t",
+          "type": "basic",
+          "from": {
+            "key_code": "t",
+            "modifiers": {
+              "mandatory": [
+                "left_command"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "t",
+              "modifiers": [
+                "left_control"
               ]
             }
           ],
@@ -1179,9 +1299,10 @@
           },
           "to": [
             {
-              "key_code": "home",
+              "key_code": "left_arrow",
               "modifiers": [
-                "left_shift"
+                "left_shift",
+                "left_command"
               ]
             }
           ]
@@ -1354,7 +1475,7 @@
           ]
         },
         {
-          "description": " i = home",
+          "description": " i = beginning of line",
           "type": "basic",
           "from": {
             "key_code": "i",
@@ -1368,7 +1489,10 @@
           },
           "to": [
             {
-              "key_code": "home"
+              "key_code": "left_arrow",
+              "modifiers": [
+                "left_command"
+              ]
             }
           ]
         },
@@ -1388,9 +1512,10 @@
           },
           "to": [
             {
-              "key_code": "end",
+              "key_code": "right_arrow",
               "modifiers": [
-                "left_shift"
+                "left_shift",
+                "left_command"
               ]
             }
           ]
@@ -1556,7 +1681,7 @@
           ]
         },
         {
-          "description": " o = end",
+          "description": " o = end of line",
           "type": "basic",
           "from": {
             "key_code": "o",
@@ -1570,7 +1695,10 @@
           },
           "to": [
             {
-              "key_code": "end"
+              "key_code": "right_arrow",
+              "modifiers": [
+                "left_command"
+              ]
             }
           ]
         },

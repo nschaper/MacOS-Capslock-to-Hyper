@@ -13,21 +13,38 @@ repo: https://github.com/Vonng/Capslock
 rules:
 
   ################################################################
-  #         Cmd-Tab to Alt-Tab when using RDP full sceen         #
+  #      Microsoft Remote Desktop remappings                     #
   ################################################################
-  - description: Cmd-Tab to Alt-Tab when using RDP
+  - description: Microsoft Remote Desktop (RDP) remapping
     manipulators:
-
-      # - description: 'capslock = esc(click) | hyper(hold)'
-      #   type: basic
-      #   from: { key_code: caps_lock ,modifiers: { optional: [ any ] } }
-      #   to: [ { key_code: right_shift,modifiers: [ right_command,right_control,right_option ] } ]
-      #   to_if_alone: [ { key_code: escape } ]
-
       - description: 'Cmd-Tab to Alt-Tab'
         type: basic
         from: { key_code: tab, modifiers: { mandatory: [ left_command ] } }
-        to: [ { key_code: tab, modifiers: [ left_alt ] } ]
+        to: [ { key_code: tab, modifiers: [ left_option ] } ]
+        conditions: [{ type: frontmost_application_if, bundle_identifiers: ["^com\\.microsoft\\.rdc$", "^com\\.microsoft\\.rdc\\.mac$", "^com\\.microsoft\\.rdc\\.macos$" ]}]
+
+      - description: 'Cmd-w to Ctrl-w'
+        type: basic
+        from: { key_code: w, modifiers: { mandatory: [ left_command ] } }
+        to: [ { key_code: w, modifiers: [ left_control ] } ]
+        conditions: [{ type: frontmost_application_if, bundle_identifiers: ["^com\\.microsoft\\.rdc$", "^com\\.microsoft\\.rdc\\.mac$", "^com\\.microsoft\\.rdc\\.macos$" ]}]
+
+      - description: 'Cmd-q to Alt-F4'
+        type: basic
+        from: { key_code: q, modifiers: { mandatory: [ left_command ] } }
+        to: [ { key_code: f4, modifiers: [ left_option ] } ]
+        conditions: [{ type: frontmost_application_if, bundle_identifiers: ["^com\\.microsoft\\.rdc$", "^com\\.microsoft\\.rdc\\.mac$", "^com\\.microsoft\\.rdc\\.macos$" ]}]
+
+      - description: 'Cmd-n to Ctrl-n'
+        type: basic
+        from: { key_code: n, modifiers: { mandatory: [ left_command ] } }
+        to: [ { key_code: n, modifiers: [ left_control ] } ]
+        conditions: [{ type: frontmost_application_if, bundle_identifiers: ["^com\\.microsoft\\.rdc$", "^com\\.microsoft\\.rdc\\.mac$", "^com\\.microsoft\\.rdc\\.macos$" ]}]
+
+      - description: 'Cmd-t to Ctrl-t'
+        type: basic
+        from: { key_code: t, modifiers: { mandatory: [ left_command ] } }
+        to: [ { key_code: t, modifiers: [ left_control ] } ]
         conditions: [{ type: frontmost_application_if, bundle_identifiers: ["^com\\.microsoft\\.rdc$", "^com\\.microsoft\\.rdc\\.mac$", "^com\\.microsoft\\.rdc\\.macos$" ]}]
 
   ################################################################
@@ -74,7 +91,7 @@ rules:
     manipulators:
 
       #==========================================================#
-      # ( h ) + ( ⌘⌥⇧⌃ )  -> ( left )                            #
+      #  h  + HYPER  -> ( left )                              #
       #==========================================================#
       # command: selection
       - description: 'command + h = shift + left'
@@ -132,7 +149,7 @@ rules:
 
 
       #==========================================================#
-      # ( j ) + ( ⌘⌥⇧⌃ )  -> ( down )                            #
+      # ( j ) + HYPER -> ( down )                            #
       #==========================================================#
       # command: selection
       - description: 'command + j = shift + down'
@@ -190,7 +207,7 @@ rules:
 
 
       #==========================================================#
-      # ( k ) + ( ⌘⌥⇧⌃ )  -> ( up )                            #
+      # ( k ) + HYPER -> ( up )                            #
       #==========================================================#
       # command: selection
       - description: 'command + k = shift + up'
@@ -248,7 +265,7 @@ rules:
 
 
       #==========================================================#
-      # ( l ) + ( ⌘⌥⇧⌃ )  -> ( right )                            #
+      # ( l ) + HYPER -> ( right )                            #
       #==========================================================#
       # command: selection
       - description: 'command + l = shift + right'
@@ -307,7 +324,7 @@ rules:
 
 
       #==========================================================#
-      # ( u ) + ( ⌘⌥⇧⌃ )  -> ( PageUp )                          #
+      # ( u ) + HYPER -> ( PageUp )                          #
       #==========================================================#
       # command: selection
       - description: 'command + u = shift + page_up'
@@ -366,13 +383,13 @@ rules:
 
 
       #==========================================================#
-      # ( i ) + ( ⌘⌥⇧⌃ )  -> ( PageUp )                          #
+      # ( i ) + HYPER -> ( Beginning of Line )                   #
       #==========================================================#
       # command: selection
       - description: 'command + i = shift + home'
         type: basic
         from: { key_code: i, modifiers: { mandatory: [ left_command, right_shift,right_control,right_option ] } }
-        to: [ { key_code: home , modifiers: [ left_shift ] } ]
+        to: [ { key_code: left_arrow , modifiers: [ left_shift, left_command ] } ]
 
       # option + command: line selection
       - description: 'option + command + i = select whole line to head'
@@ -417,20 +434,20 @@ rules:
         to: [ { mouse_key: { vertical_wheel: -128 } } ]
 
       # normal: cursor move
-      - description: ' i = home'
+      - description: ' i = beginning of line'
         type: basic
         from: { key_code: i, modifiers: { mandatory: [ right_shift,right_control,right_option ] } }
-        to: [ { key_code: home } ]
+        to: [ { key_code: left_arrow , modifiers: [ left_command ] } ]
 
 
       #==========================================================#
-      # ( o ) + ( ⌘⌥⇧⌃ )  -> ( PageUp )                          #
+      # ( o ) + HYPER -> ( End of Line )                         #
       #==========================================================#
       # command: selection
       - description: 'command + o = shift + end'
         type: basic
         from: { key_code: o, modifiers: { mandatory: [ left_command, right_shift,right_control,right_option ] } }
-        to: [ { key_code: end , modifiers: [ left_shift ] } ]
+        to: [ { key_code: right_arrow , modifiers: [ left_shift, left_command ] } ]
 
       # option + command: line selection
       - description: 'option + command + o = select whole'
@@ -475,14 +492,14 @@ rules:
         to: [ { mouse_key: { vertical_wheel: 128 } } ]
 
       # normal: cursor move
-      - description: ' o = end'
+      - description: ' o = end of line'
         type: basic
         from: { key_code: o, modifiers: { mandatory: [ right_shift,right_control,right_option ] } }
-        to: [ { key_code: end } ]
+        to: [ { key_code: right_arrow , modifiers: [ left_command ] } ]
 
 
       #==========================================================#
-      # ( p ) + ( ⌘⌥⇧⌃ )  -> ( PageUp )                          #
+      # ( p ) + HYPER -> ( PageUp )                          #
       #==========================================================#
       # command: selection
       - description: 'command + p = shift + page_down'
@@ -544,7 +561,7 @@ rules:
       ################################################################
 
       #==========================================================#
-      # ( ↩ Enter ) + ( ⌘⌥⇧⌃ ) -> ( Mouse Buttons )              #
+      # ( ↩ Enter ) + HYPER-> ( Mouse Buttons )              #
       #==========================================================#
       - description: 'control + shift + enter = button1 (mouse left click)'
         type: basic
