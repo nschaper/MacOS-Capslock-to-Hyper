@@ -47,6 +47,17 @@ rules:
         to: [ { key_code: t, modifiers: [ left_control ] } ]
         conditions: [{ type: frontmost_application_if, bundle_identifiers: ["^com\\.microsoft\\.rdc$", "^com\\.microsoft\\.rdc\\.mac$", "^com\\.microsoft\\.rdc\\.macos$" ]}]
 
+      # - description: 'Hyper-i to Home'
+      #   type: basic
+      #   from: { key_code: t, modifiers: { mandatory: [ left_command ] } }
+      #   to: [ { key_code: t, modifiers: [ left_control ] } ]
+      #   conditions: [{ type: frontmost_application_if, bundle_identifiers: ["^com\\.microsoft\\.rdc$", "^com\\.microsoft\\.rdc\\.mac$", "^com\\.microsoft\\.rdc\\.macos$" ]}]
+      # - description: 'Hyper-o to End'
+      #   type: basic
+      #   from: { key_code: t, modifiers: { mandatory: [ left_command ] } }
+      #   to: [ { key_code: t, modifiers: [ left_control ] } ]
+      #   conditions: [{ type: frontmost_application_if, bundle_identifiers: ["^com\\.microsoft\\.rdc$", "^com\\.microsoft\\.rdc\\.mac$", "^com\\.microsoft\\.rdc\\.macos$" ]}]
+
   ################################################################
   #                    Capslock to Hyper                     #
   ################################################################
@@ -437,8 +448,16 @@ rules:
       - description: ' i = beginning of line'
         type: basic
         from: { key_code: i, modifiers: { mandatory: [ ${HYPER_KEY} ] } }
-        to: [ { key_code: left_arrow , modifiers: [ left_command ] } ]
+        # to: [ { key_code: left_arrow , modifiers: [ left_command ] } ]
+        to: [ { key_code: home } ]
 
+      # # normal: cursor move
+      # - description: ' i = beginning of line (Home key for Windows RDP, Cmd+Left for others)'
+      #   type: basic
+      #   from: { key_code: i, modifiers: { mandatory: [ ${HYPER_KEY} ] } }
+      #   to_if_alone:
+      #     - { key_code: home, conditions: [ { type: frontmost_application_if, bundle_identifiers: [ '^com\\.microsoft\\.rdc$', '^com\\.microsoft\\.rdc\\.mac$' ] } ] }
+      #     - { key_code: left_arrow, modifiers: [ left_command ], conditions: [ { type: frontmost_application_unless, bundle_identifiers: [ '^com\\.microsoft\\.rdc$', '^com\\.microsoft\\.rdc\\.mac$' ] } ] }
 
       #==========================================================#
       # ( o ) + HYPER -> ( End of Line )                         #
@@ -495,8 +514,8 @@ rules:
       - description: ' o = end of line'
         type: basic
         from: { key_code: o, modifiers: { mandatory: [ ${HYPER_KEY} ] } }
-        to: [ { key_code: right_arrow , modifiers: [ left_command ] } ]
-
+        # to: [ { key_code: right_arrow , modifiers: [ left_command ] } ]
+        to: [ { key_code: end } ]
 
       #==========================================================#
       # ( p ) + HYPER -> ( PageUp )                          #
