@@ -59,6 +59,52 @@ rules:
       #   conditions: [{ type: frontmost_application_if, bundle_identifiers: ["^com\\.microsoft\\.rdc$", "^com\\.microsoft\\.rdc\\.mac$", "^com\\.microsoft\\.rdc\\.macos$" ]}]
 
   ################################################################
+  #      Microsoft OneNote remappings                     #
+  ################################################################
+  # - description: Microsoft OneNote remapping
+  #   manipulators:
+  #     - description: 'Cmd-Tab to Alt-Tab'
+  #       type: basic
+  #       from: { key_code: tab, modifiers: { mandatory: [ left_command ] } }
+  #       to: [ { key_code: tab, modifiers: [ left_option ] } ]
+  #       conditions: [{ type: frontmost_application_if, bundle_identifiers: ["^com\\.microsoft\\.rdc$", "^com\\.microsoft\\.rdc\\.mac$", "^com\\.microsoft\\.rdc\\.macos$" ]}]
+
+  #     - description: 'Cmd-w to Ctrl-w'
+  #       type: basic
+  #       from: { key_code: w, modifiers: { mandatory: [ left_command ] } }
+  #       to: [ { key_code: w, modifiers: [ left_control ] } ]
+  #       conditions: [{ type: frontmost_application_if, bundle_identifiers: ["^com\\.microsoft\\.rdc$", "^com\\.microsoft\\.rdc\\.mac$", "^com\\.microsoft\\.rdc\\.macos$" ]}]
+
+  #     - description: 'Cmd-q to Alt-F4'
+  #       type: basic
+  #       from: { key_code: q, modifiers: { mandatory: [ left_command ] } }
+  #       to: [ { key_code: f4, modifiers: [ left_option ] } ]
+  #       conditions: [{ type: frontmost_application_if, bundle_identifiers: ["^com\\.microsoft\\.rdc$", "^com\\.microsoft\\.rdc\\.mac$", "^com\\.microsoft\\.rdc\\.macos$" ]}]
+
+  #     - description: 'Cmd-n to Ctrl-n'
+  #       type: basic
+  #       from: { key_code: n, modifiers: { mandatory: [ left_command ] } }
+  #       to: [ { key_code: n, modifiers: [ left_control ] } ]
+  #       conditions: [{ type: frontmost_application_if, bundle_identifiers: ["^com\\.microsoft\\.rdc$", "^com\\.microsoft\\.rdc\\.mac$", "^com\\.microsoft\\.rdc\\.macos$" ]}]
+
+  #     - description: 'Cmd-t to Ctrl-t'
+  #       type: basic
+  #       from: { key_code: t, modifiers: { mandatory: [ left_command ] } }
+  #       to: [ { key_code: t, modifiers: [ left_control ] } ]
+  #       conditions: [{ type: frontmost_application_if, bundle_identifiers: ["^com\\.microsoft\\.rdc$", "^com\\.microsoft\\.rdc\\.mac$", "^com\\.microsoft\\.rdc\\.macos$" ]}]
+
+      # - description: 'Hyper-i to Home'
+      #   type: basic
+      #   from: { key_code: t, modifiers: { mandatory: [ left_command ] } }
+      #   to: [ { key_code: t, modifiers: [ left_control ] } ]
+      #   conditions: [{ type: frontmost_application_if, bundle_identifiers: ["^com\\.microsoft\\.rdc$", "^com\\.microsoft\\.rdc\\.mac$", "^com\\.microsoft\\.rdc\\.macos$" ]}]
+      # - description: 'Hyper-o to End'
+      #   type: basic
+      #   from: { key_code: t, modifiers: { mandatory: [ left_command ] } }
+      #   to: [ { key_code: t, modifiers: [ left_control ] } ]
+      #   conditions: [{ type: frontmost_application_if, bundle_identifiers: ["^com\\.microsoft\\.rdc$", "^com\\.microsoft\\.rdc\\.mac$", "^com\\.microsoft\\.rdc\\.macos$" ]}]
+
+  ################################################################
   #                    Capslock to Hyper                     #
   ################################################################
   - description: CapsLock to Hyper
@@ -448,8 +494,8 @@ rules:
       - description: ' i = beginning of line'
         type: basic
         from: { key_code: i, modifiers: { mandatory: [ ${HYPER_KEY} ] } }
-        # to: [ { key_code: left_arrow , modifiers: [ left_command ] } ]
-        to: [ { key_code: home } ]
+        to: [ { key_code: left_arrow , modifiers: [ left_command ] } ]
+        # to: [ { key_code: home } ]
 
       # # normal: cursor move
       # - description: ' i = beginning of line (Home key for Windows RDP, Cmd+Left for others)'
@@ -514,8 +560,8 @@ rules:
       - description: ' o = end of line'
         type: basic
         from: { key_code: o, modifiers: { mandatory: [ ${HYPER_KEY} ] } }
-        # to: [ { key_code: right_arrow , modifiers: [ left_command ] } ]
-        to: [ { key_code: end } ]
+        to: [ { key_code: right_arrow , modifiers: [ left_command ] } ]
+        # to: [ { key_code: end } ]
 
       #==========================================================#
       # ( p ) + HYPER -> ( PageUp )                          #
