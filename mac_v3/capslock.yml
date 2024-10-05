@@ -1237,7 +1237,7 @@ rules:
       #==========================================================#
       # ( tab ) --> win/desktop switch                           #
       #==========================================================#
-      - description: 'shift + tab = alter tab'
+      - description: 'shift + tab = ctrl-shift-tab'
         type: basic
         from: { key_code: tab, modifiers: { mandatory: [ left_shift,  ${HYPER_KEY} ] } }
         to: [ { key_code: tab , modifiers: [ left_control ] } ]
@@ -1252,10 +1252,10 @@ rules:
         from: { key_code: tab, modifiers: { mandatory: [ left_command,  ${HYPER_KEY} ] } }
         to: [ { key_code: tab , modifiers: [ left_command,left_shift ] } ]
 
-      - description: 'tab = alter app'
+      - description: 'tab = ctrl-tab'
         type: basic
         from: { key_code: tab, modifiers: { mandatory: [ ${HYPER_KEY} ] } }
-        to: [ { key_code: tab , modifiers: [ left_command ] } ]
+        to: [ { key_code: tab , modifiers: [ left_control,left_shift ] } ]
 
       #==========================================================#
       # ( q ) --> exit                                           #
