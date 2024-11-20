@@ -2557,13 +2557,43 @@
       "description": "Hyper Deletion",
       "manipulators": [
         {
-          "description": "option + n = delete whole line",
+          "description": "; = cut to end of line, copy to clipboard",
+          "type": "basic",
+          "from": {
+            "key_code": "semicolon",
+            "modifiers": {
+              "mandatory": [
+                "right_shift",
+                "right_control",
+                "right_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "right_arrow",
+              "modifiers": [
+                "left_command",
+                "left_shift"
+              ]
+            }
+          ],
+          "to_after_key_up": [
+            {
+              "key_code": "x",
+              "modifiers": [
+                "left_command"
+              ]
+            }
+          ]
+        },
+        {
+          "description": "n = delete a word ahead",
           "type": "basic",
           "from": {
             "key_code": "n",
             "modifiers": {
               "mandatory": [
-                "left_option",
                 "right_shift",
                 "right_control",
                 "right_option"
@@ -2574,19 +2604,18 @@
             {
               "key_code": "delete_or_backspace",
               "modifiers": [
-                "left_command"
+                "left_option"
               ]
             }
           ]
         },
         {
-          "description": "option + m = move line down",
+          "description": "m = delete a char ahead",
           "type": "basic",
           "from": {
             "key_code": "m",
             "modifiers": {
               "mandatory": [
-                "left_option",
                 "right_shift",
                 "right_control",
                 "right_option"
@@ -2595,22 +2624,17 @@
           },
           "to": [
             {
-              "key_code": "down_arrow",
-              "modifiers": [
-                "left_option",
-                "left_shift"
-              ]
+              "key_code": "delete_or_backspace"
             }
           ]
         },
         {
-          "description": "option + , = move line up",
+          "description": ", = delete a char after",
           "type": "basic",
           "from": {
             "key_code": "comma",
             "modifiers": {
               "mandatory": [
-                "left_option",
                 "right_shift",
                 "right_control",
                 "right_option"
@@ -2619,22 +2643,17 @@
           },
           "to": [
             {
-              "key_code": "up_arrow",
-              "modifiers": [
-                "left_option",
-                "left_shift"
-              ]
+              "key_code": "delete_forward"
             }
           ]
         },
         {
-          "description": "option + . = delete whole line",
+          "description": ". = delete a word after",
           "type": "basic",
           "from": {
             "key_code": "period",
             "modifiers": {
               "mandatory": [
-                "left_option",
                 "right_shift",
                 "right_control",
                 "right_option"
@@ -2643,9 +2662,9 @@
           },
           "to": [
             {
-              "key_code": "delete_or_backspace",
+              "key_code": "delete_forward",
               "modifiers": [
-                "left_command"
+                "left_option"
               ]
             }
           ]
@@ -2751,12 +2770,13 @@
           ]
         },
         {
-          "description": "n = delete a word ahead",
+          "description": "option + n = delete whole line",
           "type": "basic",
           "from": {
             "key_code": "n",
             "modifiers": {
               "mandatory": [
+                "left_option",
                 "right_shift",
                 "right_control",
                 "right_option"
@@ -2767,18 +2787,19 @@
             {
               "key_code": "delete_or_backspace",
               "modifiers": [
-                "left_option"
+                "left_command"
               ]
             }
           ]
         },
         {
-          "description": "m = delete a char ahead",
+          "description": "option + m = move line down",
           "type": "basic",
           "from": {
             "key_code": "m",
             "modifiers": {
               "mandatory": [
+                "left_option",
                 "right_shift",
                 "right_control",
                 "right_option"
@@ -2787,17 +2808,22 @@
           },
           "to": [
             {
-              "key_code": "delete_or_backspace"
+              "key_code": "down_arrow",
+              "modifiers": [
+                "left_option",
+                "left_shift"
+              ]
             }
           ]
         },
         {
-          "description": ", = delete a char after",
+          "description": "option + , = move line up",
           "type": "basic",
           "from": {
             "key_code": "comma",
             "modifiers": {
               "mandatory": [
+                "left_option",
                 "right_shift",
                 "right_control",
                 "right_option"
@@ -2806,17 +2832,22 @@
           },
           "to": [
             {
-              "key_code": "delete_forward"
+              "key_code": "up_arrow",
+              "modifiers": [
+                "left_option",
+                "left_shift"
+              ]
             }
           ]
         },
         {
-          "description": ". = delete a word after",
+          "description": "option + . = delete whole line",
           "type": "basic",
           "from": {
             "key_code": "period",
             "modifiers": {
               "mandatory": [
+                "left_option",
                 "right_shift",
                 "right_control",
                 "right_option"
@@ -2825,9 +2856,9 @@
           },
           "to": [
             {
-              "key_code": "delete_forward",
+              "key_code": "delete_or_backspace",
               "modifiers": [
-                "left_option"
+                "left_command"
               ]
             }
           ]
