@@ -35,52 +35,6 @@
               ]
             }
           ]
-        },
-        {
-          "description": "spacebar = language switch",
-          "type": "basic",
-          "from": {
-            "key_code": "spacebar",
-            "modifiers": {
-              "mandatory": [
-                "right_shift",
-                "right_control",
-                "right_option"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "spacebar",
-              "modifiers": [
-                "left_control"
-              ]
-            }
-          ]
-        },
-        {
-          "description": "command + spacebar = emoji",
-          "type": "basic",
-          "from": {
-            "key_code": "spacebar",
-            "modifiers": {
-              "mandatory": [
-                "left_command",
-                "right_shift",
-                "right_control",
-                "right_option"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "spacebar",
-              "modifiers": [
-                "left_control",
-                "left_command"
-              ]
-            }
-          ]
         }
       ]
     },
@@ -140,7 +94,7 @@
           },
           "to": [
             {
-              "key_code": "right"
+              "key_code": "right_arrow"
             }
           ]
         },
