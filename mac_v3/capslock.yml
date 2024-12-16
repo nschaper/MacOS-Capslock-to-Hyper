@@ -188,13 +188,13 @@ rules:
         from: { key_code: quote, modifiers: { mandatory: [ ${HYPER_KEY} ] } }
         to: [ { key_code: delete_or_backspace } ]
       #==========================================================#
-      # ( u ) + HYPER -> ( Home )                          #
+      # ( u ) + HYPER -> ( CMD + left_arrow )                          #
       #==========================================================#
       # normal: cursor move
       - description: ' u = page_up'
         type: basic
         from: { key_code: u, modifiers: { mandatory: [ ${HYPER_KEY} ] } }
-        to: [ { key_code: home } ]
+        to: [ { key_code: left_arrow, modifiers: [ left_command ] } ]
       #==========================================================#
       # ( i ) + HYPER -> ( up )                            #
       #==========================================================#
@@ -204,13 +204,13 @@ rules:
         from: { key_code: i, modifiers: { mandatory: [ ${HYPER_KEY} ] } }
         to: [ { key_code: up_arrow } ]
       #==========================================================#
-      # ( o ) + HYPER -> ( End )                         #
+      # ( o ) + HYPER -> ( CMD + right_arrow )                         #
       #==========================================================#
       # normal: cursor move
       - description: ' o = page down'
         type: basic
         from: { key_code: o, modifiers: { mandatory: [ ${HYPER_KEY} ] } }
-        to: [ { key_code: end } ]
+        to: [ { key_code: right_arrow, modifiers: [ left_command ] } ]
       #==========================================================#
       # ( , ) + HYPER -> ( Page Up )                         #
       #==========================================================#
