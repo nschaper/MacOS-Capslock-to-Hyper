@@ -60,10 +60,15 @@ It only takes two steps to enable Capslock on your Mac: Download & Enable
 
    > #### Alternative Installation
      > * Or download [**capslock.json**](mac_v3/capslock.json) to ` ~/.config/karabiner/assets/complex_modifications/` manually.
+     > * The `mac_v3` directory contains the latest version of the configuration.
+     > * Prerequisites for `make install`:
+     >   - `brew install gettext yq`
 
    Click `Enable All` for `Capslock Enhancement` on pop-up dialog. It will affect immediately.
 
    You can now try moving cursor with ⇪ + h,j,k,l , and explore more features below.
+
+   > Note: After running `make install`, you need to deactivate and reactivate the profiles inside Karabiner Settings for the changes to take effect.
 
 
 
